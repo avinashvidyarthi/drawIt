@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DrawIt</title>
+		<style>
+			.add-border {
+				border: 3px solid green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="controls">
+			Choose Color:
+			<input
+				type="color"
+				onchange="changeColor(event)"
+				name="color"
+				id="color"
+			/>
+			Choose Stroke Width:
+			<input
+				type="range"
+				name="range"
+				id="range"
+				min="1"
+				max="5"
+				value="1"
+				onchange="changeStrokeWidth(event)"
+			/>
+			<button onclick="erase()">Erase All</button>
+		</div>
+		<script
+			src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+			integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/short-unique-id@latest/dist/short-unique-id.min.js"></script>
+		<script src="./socket.js"></script>
+		<script src="./draw.js"></script>
+	</body>
+</html>
